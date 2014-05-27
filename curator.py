@@ -48,7 +48,6 @@ def load_ipython_extension(ipython):
     # :class:`InteractiveShell` instance that can be used in any way.
     # This allows you do to things like register new magics, plugins or
     # aliases.
-    ip = get_ipython()
 
     def heyhey(self, string):
         if token == '':
@@ -66,7 +65,7 @@ def load_ipython_extension(ipython):
         else:
             return warn_html
 
-    ip.define_magic('heyhey', heyhey)
+    ipython.define_magic('heyhey', heyhey)
     print('Register heyhey extension')
 
 
